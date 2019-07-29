@@ -16,6 +16,10 @@ const topicList = [
     {key: 'NativeModules'},
     {key: 'WebApis'},
     {key: 'debugging'},
+    {key: 'AsyncStorage'},
+    {key: 'RealmStorage'},
+    {key: 'UIAnimations'},
+    {key: 'NativeModulesScreen'}
   ]
   
 export default class HomeScreen extends React.Component {
