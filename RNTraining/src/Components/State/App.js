@@ -7,21 +7,11 @@ import {
   TextInput, 
   TouchableOpacity 
 } from 'react-native'; 
-import StatePresentation from "./StatePresentation";
 
-interface AppProps {
 
-}
-
-interface AppState {
-    password: string, 
-    isPasswordHidden: boolean, 
-    toggleText: string, 
-}
-
-export default class App extends Component<AppProps,AppState> { 
+export default class App extends Component { 
   
-  constructor(props: any) { 
+  constructor(props) { 
         super(props); 
         this.state = { 
           password: '', 
@@ -44,10 +34,17 @@ export default class App extends Component<AppProps,AppState> {
   
   render() { 
     return ( 
-     <StatePresentation 
-        handleToggle={this.handleToggle} 
-        isPasswordHidden={this.state.isPasswordHidden}
-        toggleText={this.state.toggleText}/>
+      <View style={styles.container}> 
+        <TextInput 
+          secureTextEntry={this.state.isPasswordHidden} 
+          style={{ width: 400, height: 50, backgroundColor: '#212D3B', color: 'white' }} 
+        /> 
+        <TouchableOpacity 
+          onPress={this.handleToggle} 
+        > 
+          <Text>{this.state.toggleText}</Text> 
+        </TouchableOpacity> 
+      </View> 
     ); 
   } 
 } 

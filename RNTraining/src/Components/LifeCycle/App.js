@@ -2,16 +2,8 @@
 import React, { Component } from 'react';
 import { Text, View , TouchableOpacity} from 'react-native';
 
-
-interface CustomComponentProps {
-  name: string
-}
-interface CustomComponentState {
- 
-}
-
-class CustomComponent extends Component<CustomComponentProps,CustomComponentState>  {
-  constructor(props: CustomComponentProps, state: CustomComponentState) {
+class CustomComponent extends Component {
+  constructor(props) {
     super(props);
     console.log('Constructor Called.');
   }
@@ -24,20 +16,20 @@ class CustomComponent extends Component<CustomComponentProps,CustomComponentStat
     console.log('componentDidMount called.');
   }
  
-  componentWillReceiveProps(nextProp: CustomComponentProps) {
+  componentWillReceiveProps(nextProp) {
     console.log('componentWillReceiveProps called.', nextProp);
   }
  
-  shouldComponentUpdate(nextProp: CustomComponentProps, nextState: CustomComponentState) {
+  shouldComponentUpdate(nextProp, nextState) {
     console.log('shouldComponentUpdate called.');
     return true;
   }
  
-  componentWillUpdate(nextProp: CustomComponentProps, nextState: CustomComponentState) {
+  componentWillUpdate(nextProp, nextState) {
     console.log('componentWillUpdate called.');
   }
  
-  componentDidUpdate(prevProp: CustomComponentProps, prevState: CustomComponentState) {
+  componentDidUpdate(prevProp, prevState) {
     console.log('componentDidUpdate called.');
   }
  
@@ -45,7 +37,7 @@ class CustomComponent extends Component<CustomComponentProps,CustomComponentStat
     console.log('componentWillUnmount called.');
   }
  
-  componentDidCatch(error: any, info: any) {
+  componentDidCatch(error, info) {
     console.log('componentDidCatch called.');
   }
  
@@ -59,16 +51,10 @@ class CustomComponent extends Component<CustomComponentProps,CustomComponentStat
   }
 }
 
-interface AppProps {
-
-}
-interface AppState {
-  name : string
-}
  
-export default class App extends Component<AppProps, AppState> {
+export default class App extends Component {
 
-  constructor(props: AppProps, state: AppState) {
+  constructor(props) {
     super(props);
     this.state = {
       name: 'C'

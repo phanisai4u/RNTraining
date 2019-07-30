@@ -8,50 +8,27 @@ import {
   TouchableOpacity 
 } from 'react-native'; 
 
-interface AppProps {
-
-}
-
-interface AppState {
-    password: string, 
-    isPasswordHidden: boolean, 
-    toggleText: string, 
-}
-
-export default class App extends Component<AppProps,AppState> { 
+export default class App extends Component { 
   
-  constructor(props: any) { 
+  constructor(props) { 
         super(props); 
         this.state = { 
-          password: '', 
           isPasswordHidden: true, 
           toggleText: 'Show', 
         }; 
     } 
   
-    handleToggle = () => { 
-    const { isPasswordHidden } = this.state; 
-  
-    if (isPasswordHidden) { 
-      this.setState({ isPasswordHidden: false }); 
-      this.setState({ toggleText: 'Hide' }); 
-    } else { 
-      this.setState({ isPasswordHidden: true }); 
-      this.setState({ toggleText: 'Show' }); 
-    } 
-  }; 
-  
   render() { 
     return ( 
       <View style={styles.container}> 
         <TextInput 
-          secureTextEntry={this.state.isPasswordHidden} 
+          secureTextEntry={this.props.isPasswordHidden} 
           style={{ width: 400, height: 50, backgroundColor: '#212D3B', color: 'white' }} 
         /> 
         <TouchableOpacity 
-          onPress={this.handleToggle} 
+          onPress={this.props.handleToggle} 
         > 
-          <Text>{this.state.toggleText}</Text> 
+          <Text>{this.props.toggleText}</Text> 
         </TouchableOpacity> 
       </View> 
     ); 

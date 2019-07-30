@@ -2,17 +2,9 @@ import React from 'react';
 import { Component } from 'react';
 import { TextInput, StyleSheet, Text, View, Image, Button, TouchableOpacity, Alert } from 'react-native';
 
-interface AppProps {
+export default class App extends Component {
 
-}
-
-interface AppState {
-
-}
-
-export default class App extends Component<AppProps, AppState> {
-
-    constructor(props: AppProps) {
+    constructor(props) {
         super(props);
     }
 

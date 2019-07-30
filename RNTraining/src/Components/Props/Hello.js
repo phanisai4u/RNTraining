@@ -2,11 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import {Platform, StyleSheet, Text, View, Image, Button} from 'react-native';
 
-interface HelloProps {
-    message : string
-}
-
-export default class Hello extends Component<HelloProps> {
+export default class Hello extends Component {
 
     render() {
         return (
