@@ -58,7 +58,8 @@ export default class RealmStorageScreen extends Component {
         console.log("tasks after add/Update::", tasks);
         this.setState({
             task: '',
-            taskList: tasks
+            taskList: tasks,
+            buttonText: 'Add Task'
         })
     }
 

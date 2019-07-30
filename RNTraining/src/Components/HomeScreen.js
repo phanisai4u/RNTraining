@@ -8,18 +8,18 @@ import {
 } from 'react-native';
 
 const topicList = [
-    {key: 'Components'},
+    {key: 'BasicComponents'},
     {key: 'Styles'},
     {key: 'FlexBox'},
     {key: 'List'},
     {key: 'Redux'},
-    {key: 'NativeModules'},
     {key: 'WebApis'},
-    {key: 'debugging'},
     {key: 'AsyncStorage'},
     {key: 'RealmStorage'},
-    {key: 'UIAnimations'},
-    {key: 'NativeModulesScreen'}
+    {key: 'NativeModulesScreen'},
+    {key: 'ComponentLifeCycle'},
+    {key: 'Props'},
+    {key: 'State'}
   ]
   
 export default class HomeScreen extends React.Component {

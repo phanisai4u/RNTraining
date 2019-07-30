@@ -51,6 +51,9 @@ export default class AsyncStorageScreen extends Component {
     deleteUserId = async () => {
         try {
             await AsyncStorage.removeItem('userId');
+            this.setState({
+                userId: ''
+            });
             alert("UserId deleted successfully");
         } catch (error) {
             // Error retrieving data

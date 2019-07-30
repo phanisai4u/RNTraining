@@ -33,7 +33,7 @@ export default class App extends Component<AppProps, AppState> {
                             />
                         </View>
                         <TextInput
-                            placeholder="Username"
+                            placeholder="Username"  
                             style={styles.input}
                             underlineColorAndroid="transparent"
                         />
