@@ -1,23 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, {Fragment} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  FlatList,
-} from 'react-native';
+import React, { Component } from 'react';
+import { Provider } from "react-redux";
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-
 import {
   Header,
   LearnMoreLinks,
@@ -30,6 +13,8 @@ import AsyncStorageScreen from "./src/AsyncStorageScreen";
 import RealmStorageScreen from "./src/Realm/RealmStorageScreen";
 import UIAnimationsScreen from "./src/UIAnimationsScreen";
 import NativeModulesScreen from "./src/NativeModulesScreen";
+import { store } from './src/ReduxStore';
+
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
   AsyncStorage: {screen: AsyncStorageScreen},
@@ -38,7 +23,21 @@ const MainNavigator = createStackNavigator({
   NativeModulesScreen: {screen:NativeModulesScreen}
 });
 
-const App = createAppContainer(MainNavigator);
+const AppContainer = createAppContainer(MainNavigator);
+
+export  class App extends Component{
+
+  constructor(props) {
+    super(props);
+  }
 
 
+  render() {
+    return (
+      <Provider store={store}>
+        <AppContainer/>
+      </Provider>
+    );
+  }
+}
 export default App;
