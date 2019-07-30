@@ -30,6 +30,8 @@ public class ProgressDialogModule extends ReactContextBaseJavaModule {
             if(_dialog == null) {
                 _dialog = new ProgressDialog(getCurrentActivity());
             }
+            _dialog.setCanceledOnTouchOutside(false);
+            _dialog.setCancelable(false);
             _dialog.setMessage(message);
             _dialog.show();
     }
