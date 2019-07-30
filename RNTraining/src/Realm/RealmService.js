@@ -14,13 +14,30 @@ let repository = new Realm({
     }]
 });
 
-export let saveTask = (item) => {
+export const saveTask = (item) => {
     repository.write(() => {
         item.updatedAt = new Date();
         repository.create('Todo', item);
-      })
+    })
 }
 
-export let getTasks = () =>{
+export const getTasks = () => {
     return repository.objects('Todo');
+}
+
+export const updateTask = (item) => {
+    const task = repository.objects('Todo').filtered("id ='" + item.id + "'")[0];
+    console.log("Task to update::", task);
+    repository.write(() => {
+        task.title = item.title;
+        task.updatedAt = new Date();
+    })
+}
+
+export const deleteTask = (item) => {
+    const task = repository.objects('Todo').filtered("id ='" + item.id + "'")[0];
+    console.log("Task to delete::", task);
+    repository.write(() => {
+        repository.delete(task);
+    })
 }
