@@ -14,6 +14,7 @@ import RealmStorageScreen from "./src/Realm/RealmStorageScreen";
 import NativeModulesScreen from "./src/NativeModulesScreen";
 import { store } from './src/ReduxStore';
 import WebApiScreen from './src/WebApiScreen';
+import StyleScreen from './src/Components/StyleScreen';
 import BasicComponentsPage from "./src/Components/BasicComponents/App";
 import ComponentLifeCyclePage from "./src/Components/LifeCycle/App";
 import PropsPage from "./src/Components/Props/App";
@@ -30,6 +31,7 @@ const MainNavigator = createStackNavigator({
   AsyncStorage: {screen: AsyncStorageScreen},
   RealmStorage: {screen:RealmStorageScreen},
   NativeModulesScreen: {screen:NativeModulesScreen},
+  Styles:{screen:StyleScreen},
   WebApis:{screen:WebApiScreen}
 });
 
