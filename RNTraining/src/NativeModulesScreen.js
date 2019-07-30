@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
     View,
-    Text,
-    FlatList,
     Button,
-    AsyncStorage
+    NativeModules
 } from 'react-native';
 
-export default class NativeModulesScreen extends Component{
+export default class NativeModulesScreen extends Component {
+    showActivityIndicator = () => {
+        NativeModules.ProgressDialog.showProgressDialog("This is activity Indicator");
+
+        setTimeout(()=>{
+            NativeModules.ProgressDialog.dismissDialog();
+        }, 10000);
+    }
     render() {
         return (
             <View>
-                <Text>Hi This is NativeModulesScreen</Text>
+                <Button title={"Show Activity Indicator"} onPress={this.showActivityIndicator} />
             </View>
         )
     }
