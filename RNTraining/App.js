@@ -8,7 +8,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from './src/HomeScreen';
+import HomeScreen from './src/Components/HomeScreen';
 import AsyncStorageScreen from "./src/AsyncStorageScreen";
 import RealmStorageScreen from "./src/Realm/RealmStorageScreen";
 import UIAnimationsScreen from "./src/UIAnimationsScreen";
