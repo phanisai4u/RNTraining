@@ -14,13 +14,15 @@ import RealmStorageScreen from "./src/Realm/RealmStorageScreen";
 import UIAnimationsScreen from "./src/UIAnimationsScreen";
 import NativeModulesScreen from "./src/NativeModulesScreen";
 import { store } from './src/ReduxStore';
+import WebApiScreen from './src/WebApiScreen';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
   AsyncStorage: {screen: AsyncStorageScreen},
   RealmStorage: {screen:RealmStorageScreen},
   UIAnimations: {screen:UIAnimationsScreen},
-  NativeModulesScreen: {screen:NativeModulesScreen}
+  NativeModulesScreen: {screen:NativeModulesScreen},
+  WebApis:{screen:WebApiScreen}
 });
 
 const AppContainer = createAppContainer(MainNavigator);
