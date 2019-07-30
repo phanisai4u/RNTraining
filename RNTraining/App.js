@@ -15,6 +15,7 @@ import UIAnimationsScreen from "./src/UIAnimationsScreen";
 import NativeModulesScreen from "./src/NativeModulesScreen";
 import { store } from './src/ReduxStore';
 import WebApiScreen from './src/WebApiScreen';
+import StyleScreen from './src/Components/StyleScreen';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -22,6 +23,7 @@ const MainNavigator = createStackNavigator({
   RealmStorage: {screen:RealmStorageScreen},
   UIAnimations: {screen:UIAnimationsScreen},
   NativeModulesScreen: {screen:NativeModulesScreen},
+  Styles:{screen:StyleScreen},
   WebApis:{screen:WebApiScreen}
 });
 
