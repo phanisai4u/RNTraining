@@ -17,6 +17,7 @@ export default class App extends Component {
           password: '', 
           isPasswordHidden: true, 
           toggleText: 'Show', 
+          userName: ''
         }; 
     } 
   
@@ -35,15 +36,30 @@ export default class App extends Component {
   render() { 
     return ( 
       <View style={styles.container}> 
+       
+
+       <Text>{this.state.userName ? "Hello " + this.state.userName + " !" : undefined}</Text>
+        <TextInput
+          style={{ height: 50, backgroundColor: '#FFF' }} 
+          onChangeText={(text) => { 
+            this.setState({userName: text})
+          }}
+          placeholder={'UserName'}
+          underlineColorAndroid="transparent"
+        /> 
+        <View style={{height: 3}}></View> 
+
         <TextInput 
           secureTextEntry={this.state.isPasswordHidden} 
-          style={{ width: 400, height: 50, backgroundColor: '#212D3B', color: 'white' }} 
+          style={{ height: 50, backgroundColor: '#FFF' }} 
+          placeholder={'Password'}
+          underlineColorAndroid="transparent"
         /> 
         <TouchableOpacity 
-          onPress={this.handleToggle} 
-        > 
+          onPress={this.handleToggle}> 
           <Text>{this.state.toggleText}</Text> 
         </TouchableOpacity> 
+
       </View> 
     ); 
   } 
@@ -52,7 +68,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({ 
   container: { 
     flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
+    paddingHorizontal: 20
   } 
 }); 
