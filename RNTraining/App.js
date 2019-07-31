@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from "react-redux";
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './src/Components/HomeScreen';
 import AsyncStorageScreen from "./src/AsyncStorageScreen";
 import RealmStorageScreen from "./src/Realm/RealmStorageScreen";
@@ -20,6 +13,9 @@ import ComponentLifeCyclePage from "./src/Components/LifeCycle/App";
 import PropsPage from "./src/Components/Props/App";
 import StatePage from "./src/Components/State/App";
 import ContainerPresentationPage from "./src/Components/ContainerPresentation/StateContainer";
+import FlatListScreen from './src/Components/FlatListScreen/FlatListScreen';
+import FlexBoxScreen from './src/Components/FlexBox/FlexBoxScreen';
+import SectionListScreen from './src/Components/SectionLIstScreen/SectionListScreen';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -32,7 +28,10 @@ const MainNavigator = createStackNavigator({
   RealmStorage: {screen:RealmStorageScreen},
   NativeModulesScreen: {screen:NativeModulesScreen},
   Styles:{screen:StyleScreen},
-  WebApis:{screen:WebApiScreen}
+  WebApis:{screen:WebApiScreen},
+  List:{screen:FlatListScreen},
+  FlexBox:{screen:FlexBoxScreen},
+  SectionList:{screen:SectionListScreen}
 });
 
 const AppContainer = createAppContainer(MainNavigator);

@@ -12,6 +12,7 @@ const topicList = [
     {key: 'Styles'},
     {key: 'FlexBox'},
     {key: 'List'},
+    {key:'SectionList'},
     {key: 'Redux'},
     {key: 'WebApis'},
     {key: 'AsyncStorage'},
