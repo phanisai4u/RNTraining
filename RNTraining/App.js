@@ -5,7 +5,6 @@ import HomeScreen from './src/Components/HomeScreen';
 import AsyncStorageScreen from "./src/AsyncStorageScreen";
 import RealmStorageScreen from "./src/Realm/RealmStorageScreen";
 import NativeModulesScreen from "./src/NativeModulesScreen";
-import { store } from './src/ReduxStore';
 import WebApiScreen from './src/WebApiScreen';
 import StyleScreen from './src/Components/StyleScreen';
 import BasicComponentsPage from "./src/Components/BasicComponents/App";
@@ -16,6 +15,7 @@ import ContainerPresentationPage from "./src/Components/ContainerPresentation/St
 import FlatListScreen from './src/Components/FlatListScreen/FlatListScreen';
 import FlexBoxScreen from './src/Components/FlexBox/FlexBoxScreen';
 import SectionListScreen from './src/Components/SectionLIstScreen/SectionListScreen';
+import ToDoListScreen from './src/Components/ReduxComponets/TodoList';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -31,7 +31,8 @@ const MainNavigator = createStackNavigator({
   WebApis:{screen:WebApiScreen},
   List:{screen:FlatListScreen},
   FlexBox:{screen:FlexBoxScreen},
-  SectionList:{screen:SectionListScreen}
+  SectionList:{screen:SectionListScreen},
+  Redux:{screen:ToDoListScreen}
 });
 
 const AppContainer = createAppContainer(MainNavigator);
@@ -45,9 +46,7 @@ export  class App extends Component{
 
   render() {
     return (
-      <Provider store={store}>
         <AppContainer/>
-      </Provider>
     );
   }
 }
