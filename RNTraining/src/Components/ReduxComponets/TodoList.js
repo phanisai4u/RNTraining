@@ -19,63 +19,19 @@ const sampleState = {
         completed: true
     }, {
         key: "1",
-        text: 'Exercise',
+        text: 'Exercise-1',
         completed: false
     }, {
         key: "2",
-        text: 'Exercise',
+        text: 'Exercise-2',
         completed: false
     }, {
         key: "3",
-        text: 'Exercise',
+        text: 'Task-3',
         completed: false
     }, {
         key: "4",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "5",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "6",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "7",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "8",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "9",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "10",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "11",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "12",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "13",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "14",
-        text: 'Exercise',
-        completed: false
-    }, {
-        key: "15",
-        text: 'Exercise',
+        text: 'Task-4',
         completed: false
     }],
     visibilityFilter: 'SHOW_ALL'
@@ -141,14 +97,17 @@ class AddTodo extends Component {
     }
 
     buttonWasClicked = () => {
+        
         this.props.dispatch({ type: ADD_TODO, text: this.state.text });
     }
 
     render() {
         return (
-            <View style={{backgroundColor: '#6eaa3d', height: 100}}>
+            <View style={{backgroundColor: '#FFFFF', height: 100}}>
                 <TextInput
+                    style={{borderColor:'green',borderWidth:2,padding:5, marginHorizontal: 10, marginBottom:5}}
                     onChangeText={(text) => this.setState({text})}
+                    placeholder={"Add new Task here..."}
                 />
                 <Button title="Add" onPress={this.buttonWasClicked}/>
             </View>
@@ -163,7 +122,7 @@ class Todo extends Component {
 
     render() {
         return (
-            <View style={{backgroundColor: 'red'}}>
+            <View style={{backgroundColor: 'blue'}}>
                 <TouchableHighlight underlayColor="white" onPress={() => {this.props.onClick();}}>
                     <Text style={this.props.completed ? [styles.item, styles.completed] : styles.item}>{this.props.text}</Text>
                 </TouchableHighlight>
@@ -175,7 +134,7 @@ class Todo extends Component {
 class TodoList extends Component {
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: '#667caa'}}>
+            <View style={{flex: 1}}>
                 <FlatList
                     data={this.props.todos}
                     renderItem={(o) => <Todo text={o.item.text} completed={o.item.completed} onClick={()=>{this.props.onTodoClick(o.item.key);}}/>}
@@ -189,7 +148,7 @@ class Link extends Component {
     render() {
         return (
 
-            <Button color={this.props.active==true ? 'red': 'blue'} title={this.props.children} onPress={this.props.onClick}/>
+            <Button color={this.props.active==true ? 'blue': 'gray'} title={this.props.children} onPress={this.props.onClick}/>
         )
     }
 }
@@ -197,7 +156,7 @@ class Link extends Component {
 class Footer extends Component {
     render() {
         return (
-            <View style={{backgroundColor: '#aa4978', height: 60, flexDirection: 'row', padding: 10}}>
+            <View style={{ height: 60, flexDirection: 'row', padding: 10}}>
                 <FilterLink filter={SHOW_ALL}>All</FilterLink>
                 <FilterLink filter={SHOW_COMPLETED}>Complete</FilterLink>
                 <FilterLink filter={SHOW_ACTIVE}>Active</FilterLink>
@@ -261,10 +220,11 @@ const FilterLink = connect(
 
 
 
-// onTodoClick={(id) => {Alert.alert(id + " was clicked");}
-// <TodoList todos={sampleState.todos} onTodoClick={(id) => {Alert.alert("you clicked " + id)}}/>
 
 export default class ToDoListScreen extends Component {
+    static navigationOptions = {
+        title: 'Redux',
+    };
     render() {
         return (
             <Provider store={store}>
@@ -283,6 +243,7 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 18,
         height: 44,
+        color:'white',
     },
     container: {
         flex: 1,
